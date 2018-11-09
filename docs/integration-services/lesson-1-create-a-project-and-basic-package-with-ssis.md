@@ -45,7 +45,7 @@ Here is an example of the source data contained in the SampleCurrencyData.txt fi
 When working with flat file source data, it is important to understand how the Flat File connection manager interprets the flat file data. If the flat file source is Unicode, the Flat File connection manager defines all columns as [DT_WSTR] with a default column width of 50. If the flat file source is ANSI-encoded, the columns are defined as [DT_STR] with a column width of 50. You will probably have to change these defaults to make the string column types more appropriate for your data. To do this, you will need to look at the data type of the destination where the data will be written to and then choose the correct type within the Flat File connection manager.  
   
 ### Looking at the Destination  
-The ultimate destination for the source data is the **FactCurrency** fact table in **AdventureWorksDW**. The **FactCurrency** fact table has four columns, and has relationships to two dimension tables, as shown in the following table.  
+The ultimate destination for the source data is the **FactCurrencyRate** fact table in **AdventureWorksDW**. The **FactCurrencyRate** fact table has five columns, and has relationships to two dimension tables, as shown in the following table.  
   
 |Column Name|Data Type|Lookup Table|Lookup Column|  
 |---------------|-------------|----------------|-----------------|  
@@ -53,6 +53,7 @@ The ultimate destination for the source data is the **FactCurrency** fact table 
 |CurrencyKey|int (FK)|DimCurrency|CurrencyKey (PK)|  
 |DateKey|Int (FK)|DimDate|DateKey (PK)|  
 |EndOfDayRate|float|None|None|  
+|Date|datetime|None|None|  
   
 ### Mapping Source Data to be Compatible with the Destination  
 Analysis of the source and destination data formats indicates that lookups will be necessary for the **CurrencyKey** and **DateKey** values. The transformations that will perform these lookups will obtain the **CurrencyKey** and **DateKey** values by using the alternate keys from **DimCurrency** and **DimDate** dimension tables.  
