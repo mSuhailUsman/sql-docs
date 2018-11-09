@@ -34,9 +34,11 @@ In this procedure, you add and configure an OLE DB destination to use the OLE DB
 7.  In the **Name of the table or the view** box, type or select **[dbo].[FactCurrencyRate]**.  
   
 8.  Click the **New** button to create a new table.  Change the name of the table in the script to read **NewFactCurrencyRate**.  Click **OK**.  
+
+  "NewFactCurrencyRate" table already exist with AdventureWorksDW2012 database backup provided with this traning. Receive error when perform step # 8.
   
 9. Upon clicking **OK**, the dialog will close and the **Name of the table or the view** will automatically change to **NewFactCurrencyRate**.  
-  
+ 
 10. Click **Mappings**.  
   
 11. Verify that the **AverageRate**, **CurrencyKey**, **EndOfDayRate**, and **DateKey** input columns are mapped correctly to the destination columns. If same-named columns are mapped, the mapping is correct.  
